@@ -284,7 +284,7 @@ h2 {
     background: transparent;
     border-radius: var(--border-radius);
     backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
+    /* box-shadow: var(--shadow); */
 }
 
 .affiliations {
