@@ -308,9 +308,10 @@ section {
 }
 
 .evaluation h2 {
-    text-align: center;
+    text-align: left;  /* 改为左对齐 */
     margin-bottom: 3rem;
 }
+
 
 .eval-intro {
     font-size: 1.2rem;
@@ -562,67 +563,181 @@ section {
 }
 
 /* Section headers */
+section h2 {
+    text-align: left;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+    padding-left: 0;
+}
+
 section h2 i {
     color: var(--secondary-color);
-    margin-right: 0.8rem;
-    font-size: 0.9em;
+    font-size: 1.8rem;
     transition: var(--transition);
 }
 
-section:hover h2 i {
-    transform: rotate(360deg);
+/* Table styles */
+.table-container {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin: 2rem 0;
 }
 
-/* Algorithm categories */
-.algorithm-category i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
-    transition: var(--transition);
+.evaluation table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
 }
 
-.algorithm-category:hover i {
-    transform: rotate(15deg);
-}
-
-/* Image caption */
-.image-caption i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
-}
-
-/* Additional hover effects */
-.dataset-content p i {
-    color: var(--secondary-color);
-    margin-right: 0.5rem;
-    transition: var(--transition);
-}
-
-.dataset-content p:hover i {
-    transform: scale(1.2);
-}
-
-/* Enhance scrollbar for better visibility */
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 6px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 6px;
-    border: 2px solid transparent;
-    background-clip: content-box;
-}
-
-::-webkit-scrollbar-thumb:hover {
+.evaluation th {
     background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    padding: 1.2rem 1rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    white-space: nowrap;
+}
+
+.evaluation td {
+    padding: 1rem;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.evaluation td:last-child,
+.evaluation th:last-child {
+    border-right: none;
+}
+
+.evaluation tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.evaluation tr:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+}
+
+.algorithm-group {
+    background: var(--secondary-color) !important;
+    color: white !important;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+
+/* Citation styles */
+.citation-container {
+    position: relative;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 1rem;
+    padding: 1.5rem;
+}
+
+.citation pre {
+    background: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.copy-button:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.copy-button i {
+    font-size: 1rem;
+}
+
+/* Model type labels */
+.model-type-label {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.model-type-closed {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.model-type-reasoning {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.model-type-opensource {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section h2 i {
+        font-size: 1.6rem;
+    }
+
+    .evaluation th {
+        font-size: 0.9rem;
+        padding: 1rem 0.8rem;
+    }
+
+    .evaluation td {
+        padding: 0.8rem;
+    }
+
+    .copy-button {
+        position: static;
+        margin-bottom: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .citation-container {
+        padding: 1rem;
+    }
 }
 
 /* Additional responsive adjustments */
