@@ -12,6 +12,15 @@
             overflow-x: auto;
             margin: 20px 0;
             padding: 0 20px;
+            width: 100%;
+            max-width: 100%;
+            -webkit-overflow-scrolling: touch; /* 为iOS设备添加平滑滚动 */
+        }
+
+        .evaluation .table-container {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 20px;
         }
 
         .evaluation table {
@@ -26,7 +35,8 @@
             padding: 8px 15px;
             text-align: center;
             border: none;
-            min-width: 80px; /* 确保每列有最小宽度 */
+            min-width: 80px;
+            white-space: nowrap; /* 防止内容换行 */
         }
         
         .evaluation tbody tr {
@@ -42,10 +52,18 @@
             font-weight: bold;
             white-space: nowrap;
             height: 40px;
+            position: sticky; /* 固定表头 */
+            top: 0;
+            background: white; /* 确保表头不透明 */
+            z-index: 1;
         }
         
         .evaluation th.rank-col {
             min-width: 60px;
+            position: sticky; /* 固定第一列 */
+            left: 0;
+            z-index: 2;
+            background: white;
         }
         
         .evaluation th.type-col {
@@ -169,7 +187,7 @@
             </div>
             
             <div class="nav-buttons">
-                <a href="https://arxiv.org/abs/2504.19093" class="button">
+                <a href="https://briefmind-daily.github.io" class="button">
                     <i class="fas fa-file-alt"></i>
                     Paper
                 </a>
@@ -499,13 +517,21 @@
             <img src="images/xy.jpg" alt="CipherBank Overview" class="full-width-image" style="width: 95%; max-width: 1200px; height: auto;">
             <p class="image-caption">Model Performance - Accuracy vs. Levenshtein Similarity</p>
         </div>
+
         <div class="findings">
             <h3>Key Findings</h3>
+
+            <div class="overview-image">
+                <img src="images/ana.jpeg" alt="Analysis Results" class="full-width-image" style="width: 95%; max-width: 1200px; height: auto;">
+                <p class="image-caption">Evaluation of LLM Performance Under Different Encryption and Prompting Conditions.</p>
+            </div>
             <ul>
                 <li>Even top models like Claude-3.5 and o1 only achieved <span class="score">45.14</span> and <span class="score">40.59</span> scores respectively, revealing the difficulty of cryptographic reasoning.</li>
                 <li>Most LLMs struggle with systematic decryption tasks, especially when they require more than pattern matching.</li>
                 <li>Reasoning Models Generally Outperform Chat Models. </li>
                 <li>Closed-source Chat Model Models Retain an Edge Over Open-source Chat Models. </li>
+                <li>The performance of LLMs is sensitive to the Noise Interference and Encryption Scope.</li>
+                <li>Detailed prompts can significantly enhance model performance, but the improvement for chat and reasoning models still differs.</li>
             </ul>
         </div>
 
@@ -516,13 +542,13 @@
                     <i class="fas fa-copy"></i> Copy
                 </button>
                 <pre id="bibtex">@misc{li2025cipherbankexploringboundaryllm,
-      title={CipherBank: Exploring the Boundary of LLM Reasoning Capabilities through Cryptography Challenges}, 
-      author={Yu Li and Qizhi Pei and Mengyuan Sun and Honglin Lin and Chenlin Ming and Xin Gao and Jiang Wu and Conghui He and Lijun Wu},
-      year={2025},
-      eprint={2504.19093},
-      archivePrefix={arXiv},
-      primaryClass={cs.CR},
-      url={https://arxiv.org/abs/2504.19093}, 
+    title={CipherBank: Exploring the Boundary of LLM Reasoning Capabilities through Cryptography Challenges}, 
+    author={Yu Li and Qizhi Pei and Mengyuan Sun and Honglin Lin and Chenlin Ming and Xin Gao and Jiang Wu and Conghui He and Lijun Wu},
+    year={2025},
+    eprint={2504.19093},
+    archivePrefix={arXiv},
+    primaryClass={cs.CR},
+    url={https://arxiv.org/abs/2504.19093}, 
 }</pre>
             </div>
         </section>
